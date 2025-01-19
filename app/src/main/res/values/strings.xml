@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Lab1A</string>
+    <string name="welcome_message">Welcome to Rock-Paper-Scissors!</string>
+    <string name="select_weapon_message">Please Choose Your Weapon:</string>
+    <string name="score_text">Player: %d, Computer: %d</string>
+    <string name="player_weapon">Player\'s Weapon: %s</string>
+    <string name="computer_weapon">Computer\'s Weapon: %s</string>
+    <string name="win_text">%s</string>
+</resources>
