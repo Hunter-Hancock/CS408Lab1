@@ -40,6 +40,22 @@ public class MainActivity extends AppCompatActivity {
         Log.i("MainActivity", "onStop() invoked");
     }
 
+    private String weaponSpecificText(Weapon w) {
+        switch (w) {
+            case ROCK: {
+                return " beats ";
+            }
+            case PAPER: {
+                return " wraps ";
+            }
+            case SCISSORS: {
+                return " cuts ";
+            }
+        }
+
+        return "";
+    }
+
     private String CheckWin() {
         StringBuilder winMessage = new StringBuilder();
 
@@ -51,11 +67,10 @@ public class MainActivity extends AppCompatActivity {
                 || (playerWeapon == Weapon.SCISSORS && computerWeapon == Weapon.PAPER)) {
             playerScore += 1;
             winMessage.append("Players wins: ").append(playerWeapon);
-            if (playerWeapon == Weapon.SCISSORS) {
-                winMessage.append(" cuts ");
-            } else {
-                winMessage.append(" beats ");
-            }
+
+            String specific = weaponSpecificText(playerWeapon);
+
+            winMessage.append(specific);
 
             winMessage.append(computerWeapon);
 
@@ -63,11 +78,9 @@ public class MainActivity extends AppCompatActivity {
             computerScore += 1;
 
             winMessage.append("Computer wins: ").append(computerWeapon);
-            if (computerWeapon == Weapon.SCISSORS) {
-                winMessage.append(" cuts ");
-            } else {
-                winMessage.append(" beats ");
-            }
+            String specific = weaponSpecificText(computerWeapon);
+
+            winMessage.append(specific);
 
             winMessage.append(playerWeapon);
         }
